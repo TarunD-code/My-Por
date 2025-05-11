@@ -1,0 +1,138 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --dark-bg: #1a1a1a;
+    --cell-size: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark-bg);
+    font-family: 'Audiowide', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neon-blue);
+}
+
+.game-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+    max-width: 600px;
+    width: 90%;
+}
+
+.neon-title {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px var(--neon-blue);
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    animation: title-glow 2s infinite alternate;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 2rem auto;
+    width: calc(var(--cell-size) * 3 + 20px);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    color: var(--neon-blue);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cell:hover {
+    background: rgba(0, 243, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.cell.x::before {
+    content: "X";
+    text-shadow: 0 0 20px var(--neon-blue);
+}
+
+.cell.o::before {
+    content: "O";
+    color: var(--neon-pink);
+    text-shadow: 0 0 20px var(--neon-pink);
+}
+
+.status {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    min-height: 2rem;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.score {
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    width: 45%;
+}
+
+.neon-button {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.neon-button:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+@keyframes title-glow {
+    from { text-shadow: 0 0 10px var(--neon-blue); }
+    to { text-shadow: 0 0 30px var(--neon-blue), 
+                     0 0 50px var(--neon-pink); }
+}
+
+@media (max-width: 480px) {
+    .neon-title {
+        font-size: 1.8rem;
+    }
+    
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}

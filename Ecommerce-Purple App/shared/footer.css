@@ -1,0 +1,19 @@
+.main-footer {
+    background: #1e293b;
+    color: white;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
