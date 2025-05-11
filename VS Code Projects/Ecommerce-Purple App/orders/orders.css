@@ -1,0 +1,139 @@
+/* Order History Styles */
+.orders-container {
+    max-width: 1200px;
+    margin: 100px auto 2rem;
+    padding: 2rem;
+}
+
+.orders-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.order-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(106, 27, 154, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(106, 27, 154, 0.15);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.order-id {
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.order-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-badge {
+    background: var(--light-purple);
+    color: var(--primary-purple);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Tracking Page Styles */
+.tracking-container {
+    max-width: 1200px;
+    margin: 100px auto 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline-progress {
+    position: absolute;
+    height: 4px;
+    background: var(--light-purple);
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.timeline-step {
+    text-align: center;
+    width: 25%;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid var(--light-purple);
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    transition: var(--transition);
+}
+
+.timeline-step.active .timeline-dot {
+    border-color: var(--primary-purple);
+    background: var(--primary-purple);
+}
+
+.order-items {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(106, 27, 154, 0.1);
+}
+
+.items-list {
+    margin: 1rem 0;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tracking-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .order-card {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Temp Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Temperature converter.css">
+</head>
+<body>
+    <div class="particles-container"></div>
+    
+    <div class="converter-container">
+        <div class="converter-glass">
+            <h1 class="title">
+                <span class="gradient-text">Quantum</span>
+                <span class="pulse">Converter</span>
+            </h1>
+            
+            <div class="input-group">
+                <input type="number" id="temperature" class="neon-input" placeholder="Enter temperature" autocomplete="off">
+                <div class="unit-switcher">
+                    <select id="fromUnit" class="unit-select">
+                        <option value="celsius">°C</option>
+                        <option value="fahrenheit">°F</option>
+                        <option value="kelvin">K</option>
+                    </select>
+                    <div class="switch-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <select id="toUnit" class="unit-select">
+                        <option value="fahrenheit">°F</option>
+                        <option value="celsius">°C</option>
+                        <option value="kelvin">K</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <div class="result-display" id="result">
+                    <span class="placeholder">Select units to convert</span>
+                    <div class="result-value"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="convert-btn" onclick="convert()">
+                    <span class="btn-text">Convert</span>
+                    <div class="hover-effect"></div>
+                </button>
+                <button class="history-btn" onclick="toggleHistory()">
+                    <i class="fas fa-history"></i>
+                </button>
+            </div>
+
+            <div class="conversion-history">
+                <h3>Conversion History <span class="clear-btn" onclick="clearHistory()">Clear</span></h3>
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="temperature converter.js"></script>
+</body>
+</html>

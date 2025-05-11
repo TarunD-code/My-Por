@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Stopwatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Stopwatch.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <div class="cyber-border">
+            <div class="cyber-content">
+                <h1 class="cyber-title">CYBER<span>TIMER</span></h1>
+                
+                <div class="digital-display">
+                    <span class="digit">00</span>
+                    <span class="colon">:</span>
+                    <span class="digit">00</span>
+                    <span class="colon">:</span>
+                    <span class="digit">00</span>
+                    <span class="milli">:00</span>
+                </div>
+
+                <div class="control-grid">
+                    <button class="cyber-button start" onclick="start()">
+                        <span class="glitch-text" data-text="START">START</span>
+                        <div class="led"></div>
+                    </button>
+                    <button class="cyber-button lap" onclick="lap()">
+                        <span class="glitch-text" data-text="LAP">LAP</span>
+                        <div class="led"></div>
+                    </button>
+                    <button class="cyber-button stop" onclick="stop()">
+                        <span class="glitch-text" data-text="STOP">STOP</span>
+                        <div class="led"></div>
+                    </button>
+                    <button class="cyber-button reset" onclick="reset()">
+                        <span class="glitch-text" data-text="RESET">RESET</span>
+                        <div class="led"></div>
+                    </button>
+                </div>
+
+                <div class="laps-panel">
+                    <div class="laps-header">
+                        <h3>LAP RECORDS</h3>
+                        <div class="scanline"></div>
+                    </div>
+                    <div class="laps-list" id="laps"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Stopwatch.js"></script>
+</body>
+</html>

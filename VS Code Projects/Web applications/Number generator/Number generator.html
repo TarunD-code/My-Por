@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Random Generator</title>
+    <link rel="stylesheet" href="Number generator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="generator-box glassmorphism">
+            <h1 class="neon-text">Random Number Generator</h1>
+            
+            <div class="input-group">
+                <div class="input-box">
+                    <label>Minimum</label>
+                    <input type="number" id="minValue" value="1">
+                </div>
+                <div class="input-box">
+                    <label>Maximum</label>
+                    <input type="number" id="maxValue" value="100">
+                </div>
+            </div>
+
+            <button class="generate-btn" onclick="generateNumber()">
+                <span class="btn-text">Generate Magic</span>
+                <i class="fas fa-magic sparkle"></i>
+            </button>
+
+            <div class="result-container">
+                <div id="result" class="result-display">0</div>
+                <button class="copy-btn" onclick="copyNumber()">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="history-box">
+                <h3>History <i class="fas fa-history"></i></h3>
+                <div id="history" class="history-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Number generator.js"></script>
+</body>
+</html>

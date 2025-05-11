@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mode-switcher">
+            <button onclick="toggleTheme()" class="theme-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('calculator')">Calculator</button>
+            <button class="tab" onclick="switchTab('converter')">Unit Converter</button>
+        </div>
+
+        <!-- Calculator Section -->
+        <div id="calculator" class="content active">
+            <div class="calculator-glass">
+                <div class="display-container">
+                    <input id="display" readonly>
+                </div>
+                
+                <div class="button-grid">
+                    <!-- Scientific Buttons -->
+                    <div class="scientific-panel">
+                        <button onclick="appendToDisplay('Math.sin(')">sin</button>
+                        <button onclick="appendToDisplay('Math.cos(')">cos</button>
+                        <button onclick="appendToDisplay('Math.tan(')">tan</button>
+                        <button onclick="appendToDisplay('Math.log(')">ln</button>
+                        <button onclick="appendToDisplay('Math.sqrt(')">√</button>
+                        <button onclick="appendToDisplay('Math.pow(')">x^y</button>
+                        <button onclick="appendToDisplay('Math.PI')">π</button>
+                        <button onclick="appendToDisplay('(')">(</button>
+                        <button onclick="appendToDisplay(')')">)</button>
+                    </div>
+                    
+                    <!-- Standard Calculator -->
+                    <div class="standard-buttons">
+                        <button onclick="clearDisplay()" class="operator-btn">C</button>
+                        <button onclick="deleteLast()" class="operator-btn">⌫</button>
+                        <button onclick="appendToDisplay('%')" class="operator-btn">%</button>
+                        <button onclick="appendToDisplay('/')" class="operator-btn">÷</button>
+                        
+                        <button onclick="appendToDisplay('7')">7</button>
+                        <button onclick="appendToDisplay('8')">8</button>
+                        <button onclick="appendToDisplay('9')">9</button>
+                        <button onclick="appendToDisplay('*')" class="operator-btn">×</button>
+                        
+                        <button onclick="appendToDisplay('4')">4</button>
+                        <button onclick="appendToDisplay('5')">5</button>
+                        <button onclick="appendToDisplay('6')">6</button>
+                        <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
+                        
+                        <button onclick="appendToDisplay('1')">1</button>
+                        <button onclick="appendToDisplay('2')">2</button>
+                        <button onclick="appendToDisplay('3')">3</button>
+                        <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+                        
+                        <button onclick="appendToDisplay('0')" class="span-2">0</button>
+                        <button onclick="appendToDisplay('.')">.</button>
+                        <button onclick="calculate()" class="operator-btn equals">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unit Converter Section -->
+        <div id="converter" class="content">
+            <div class="converter-glass">
+                <div class="converter-header">
+                    <select id="conversionType" onchange="updateConversionUnits()">
+                        <option value="currency">Currency</option>
+                        <option value="length">Length</option>
+                        <option value="temperature">Temperature</option>
+                    </select>
+                </div>
+                
+                <div class="converter-body">
+                    <div class="input-group">
+                        <input type="number" id="inputValue" placeholder="Enter value">
+                        <select id="fromUnit"></select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" id="resultValue" readonly>
+                        <select id="toUnit"></select>
+                    </div>
+                    
+                    <button onclick="convertUnits()" class="convert-btn">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Calculator.js"></script>
+</body>
+</html>
