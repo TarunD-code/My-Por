@@ -79,6 +79,7 @@
   <img src="./screenshots/calculator.png" width="45%"> <img src="./screenshots/stopwatch.png" width="45%">
 </details>
 
+
 ---
 
 ## 📌 Key Features
@@ -100,17 +101,5 @@
 [![Email](https://img.shields.io/badge/Email-tarungjsheela@gmail.com-blue?logo=gmail)](mailto:tarungjsheela@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-green)](https://tarund-code.github.io)
 [![Blog](https://img.shields.io/badge/Blog-Tech_Articles-orange)](https://medium.com/@tarund)
-
-
-## 📈 Technical Evolution
-```mermaid
-graph TD
-    A[Technical Support] --> B(Javascript, HTML, CSS)
-    B(Java Core)
-    B --> C[Java Core]
-    C --> D[Spring Boot]
-    D --> E[Payment Systems]
-    E --> F[E-commerce Architecture]
-    F --> G[Full-Stack Development]
 
 
